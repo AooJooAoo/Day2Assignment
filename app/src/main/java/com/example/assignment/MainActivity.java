@@ -16,15 +16,16 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        EditText editName = findViewById(R.id.name);
-        EditText editNum = findViewById(R.id.studentNumber);
-
         Button ok = (Button) findViewById(R.id.ok);
         ok.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View view) {
+
+                EditText editName = findViewById(R.id.name);
                 String name = editName.getText().toString();
+                
+                EditText editNum = findViewById(R.id.studentNumber);
                 String stuNum = editNum.getText().toString();
                 /*
                 Uri nameU, stuNumU;
@@ -33,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
                 */
                 Intent ok = new Intent(MainActivity.this, Second.class);
                 ok.putExtra("name", name);
-                ok.putExtra("stuNUm", stuNum);
+                ok.putExtra("studentNumber", stuNum);
                 startActivity(ok);
             }
         });
